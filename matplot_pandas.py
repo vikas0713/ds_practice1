@@ -104,5 +104,21 @@ def exercise6():
     plt.show()
 
 
+def exercise7():
+    """
+    Calculate total sale data for last year for each product and show it using a Pie chart
+    """
+    labels = ["Facewash", "Facecream", "Toothpaste", "Bathing Soap", "Shampoo", "Moisturizer"]
+    dframe = get_dataframe()
+    total_sum = [
+        dframe["facewash"].sum(), dframe["facecream"].sum(), dframe["toothpaste"].sum(),
+        dframe["bathingsoap"].sum(), dframe["shampoo"].sum(), dframe["moisturizer"].sum()
+    ]
+    plt.pie(total_sum, labels=labels, autopct="%1.1f%%")        # autopct basically shows percentage on chart
+    plt.legend()
+    plt.savefig("graphs/exercise7.png")
+    plt.show()
+
+
 if __name__ == "__main__":
-    exercise6()
+    exercise7()
